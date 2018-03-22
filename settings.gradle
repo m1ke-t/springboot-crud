@@ -1,0 +1,2 @@
+//rootProject.name = 'springboot-crud'
+include ':main_module',':core', ':domain', ':mytest'

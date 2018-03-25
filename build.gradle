@@ -10,12 +10,12 @@ buildscript {
 	}
 }
 
-//apply plugin: 'java'
+apply plugin: 'java'
 
 
 //group = 'com.company'
 //version = '0.0.1-SNAPSHOT'
-//sourceCompatibility = 1.8
+sourceCompatibility = 1.8
 
 subprojects {
 
@@ -30,7 +30,8 @@ subprojects {
 	dependencies {
 		compile('org.springframework.boot:spring-boot-starter')
 		testCompile('org.springframework.boot:spring-boot-starter-test')
-		compile "log4j:log4j:1.2.17"
+		compile "org.slf4j:slf4j-api:1.7.25"
+		compile "ch.qos.logback:logback-core:1.2.3"
 	}
 }
 

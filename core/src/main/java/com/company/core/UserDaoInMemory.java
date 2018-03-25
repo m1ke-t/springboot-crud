@@ -3,13 +3,17 @@ package com.company.core;
 import com.company.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
-@Repository
+@Component
+@Service
 public class UserDaoInMemory implements UserDao {
     static final Logger log = LoggerFactory.getLogger(UserDaoInMemory.class.getName());
+    @Autowired
     private Storage storage;
 
     @Override
@@ -67,8 +71,12 @@ public class UserDaoInMemory implements UserDao {
     public ArrayList<User> getAll() {
         return new ArrayList<>(storage.getAll());
     }
+//    public UserDaoInMemory(Storage storage) {
+//        this.storage = storage;
+//    }
 
-    public UserDaoInMemory(Storage storage) {
-        this.storage = storage;
-    }
+//    public UserDaoInMemory setStorage(Storage storage) {
+//        storage = this.storage;
+//        return this;
+//    }
 }

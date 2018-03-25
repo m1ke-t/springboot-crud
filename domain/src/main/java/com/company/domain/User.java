@@ -1,5 +1,7 @@
 package com.company.domain;
 
+
+
 public class User {
 
     private String login;
@@ -32,7 +34,6 @@ public class User {
         this.password = password;
         this.name = name;
     }
-
     public void setId(Integer id) {
         this.id = id;
     }

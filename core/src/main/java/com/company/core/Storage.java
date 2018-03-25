@@ -1,9 +1,11 @@
 package com.company.core;
 import com.company.domain.User;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.HashMap;
 
+@Component
 public class Storage {
     public static class StorageHolder {
         public static final Storage storageInstance = new Storage();

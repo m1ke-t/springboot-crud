@@ -25,7 +25,7 @@ public class UserDaoInMemoryTest {
     @Before
     public void setUp(){
         Storage mockedStorage = mock(Storage.class);
-        ud = new UserDaoInMemory(mockedStorage);
+        ud = new UserDaoInMemory();
 
 
         User dbUser0 = user0;

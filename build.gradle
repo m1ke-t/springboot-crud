@@ -10,11 +10,13 @@ buildscript {
 	}
 }
 
+
 apply plugin: 'java'
+apply plugin: 'application'
 
-
-//group = 'com.company'
-//version = '0.0.1-SNAPSHOT'
+mainClassName = 'com.company.crud.SpringbootCrudApplication'
+group = 'com.company'
+version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 subprojects {

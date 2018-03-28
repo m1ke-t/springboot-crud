@@ -1,31 +1,28 @@
 package com.company.crud;
-import asg.cliche.Command;
+import asg.cliche.*;
 import com.company.core.UserDao;
 import com.company.core.UserDaoInMemory;
 import com.company.domain.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Bean;
+
+import java.io.IOException;
 
 @SpringBootApplication
 public class SpringbootCrudApplication {
-	@Command // One
-	public String hello() {
-		return "Hello, World!";
-	}
 
-	@Command // two,
-	public int add(int a, int b) {
-		return a + b;
-	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		ConfigurableApplicationContext ctx = SpringApplication.run(SpringbootCrudApplication.class, args);
 		UserDao ud = (UserDaoInMemory) ctx.getBean("udim");
 
 		ud.createUser(new User("fgd", "gfdg", "gfdg"));
 		System.out.println(ud);
+
+        ShellFactory.createConsoleShell("cliche> ", "Enter '?list' to list all commands",
+                new SpringbootCrudApplication()).commandLoop();
 
 
 

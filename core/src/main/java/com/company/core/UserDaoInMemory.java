@@ -13,6 +13,7 @@ import java.util.ArrayList;
 @Service
 public class UserDaoInMemory implements UserDao {
     static final Logger log = LoggerFactory.getLogger(UserDaoInMemory.class.getName());
+
     @Autowired
     private Storage storage;
 
@@ -71,12 +72,4 @@ public class UserDaoInMemory implements UserDao {
     public ArrayList<User> getAll() {
         return new ArrayList<>(storage.getAll());
     }
-//    public UserDaoInMemory(Storage storage) {
-//        this.storage = storage;
-//    }
-
-//    public UserDaoInMemory setStorage(Storage storage) {
-//        storage = this.storage;
-//        return this;
-//    }
 }

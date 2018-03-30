@@ -4,12 +4,11 @@ import com.company.core.Storage;
 import com.company.core.UserDaoInMemory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class Config {
 
-    @Bean("udim")
+    @Bean
     public UserDaoInMemory userDaoInMemory() {
         return new UserDaoInMemory();
     }

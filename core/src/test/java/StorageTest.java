@@ -4,8 +4,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class StorageTest {
-    Storage storage = Storage.getInstance();
-    int size;
+    private Storage storage = Storage.getInstance();
+    private int size;
 
 
     @Test

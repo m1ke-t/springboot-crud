@@ -3,9 +3,7 @@ package com.company.core;
 import com.company.domain.User;
 import java.util.ArrayList;
 
-/**
- * Created by Mike S. on 04.03.2018.
- */
+
 public interface UserDao {
     void createUser(User user);
     void updateUser(User user);

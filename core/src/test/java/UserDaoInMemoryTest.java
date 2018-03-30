@@ -4,6 +4,14 @@ import com.company.core.UserDaoInMemory;
 import com.company.domain.User;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.stereotype.Component;
+import org.springframework.test.context.junit4.SpringRunner;
 
 
 import java.util.Arrays;
@@ -11,21 +19,29 @@ import java.util.Arrays;
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 
-
 public class UserDaoInMemoryTest {
+
 
     User user0 = new User("login0", "pwd", "username0");
     User user1 = new User("login1", "pwd", "username1");
     User user2 = new User("login2", "pwd", "username2");
     User user3 = new User("login3", "pwd", "username3");
-    UserDao ud;
 
-    User dbUser;
+
+    @Mock
+    private Storage mockedStorage;
+
+    @InjectMocks
+    private UserDaoInMemory ud;
+
+
+    private User dbUser;
+
 
     @Before
     public void setUp(){
-        Storage mockedStorage = mock(Storage.class);
-        ud = new UserDaoInMemory();
+        MockitoAnnotations.initMocks(this);
+
 
 
         User dbUser0 = user0;

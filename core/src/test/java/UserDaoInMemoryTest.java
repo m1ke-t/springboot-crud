@@ -98,5 +98,4 @@ public class UserDaoInMemoryTest {
         assertTrue(dbUser != null);
         assertEquals(dbUser, user3);
     }
-
 }

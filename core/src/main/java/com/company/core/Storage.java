@@ -8,7 +8,7 @@ import java.util.HashMap;
 @Component
 public class Storage {
     public static class StorageHolder {
-        public static final Storage storageInstance = new Storage();
+        static final Storage storageInstance = new Storage();
     }
 
     private Storage() {

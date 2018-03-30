@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @Component
 @Service
 public class UserDaoInMemory implements UserDao {
-    static final Logger log = LoggerFactory.getLogger(UserDaoInMemory.class.getName());
+    private static final Logger log = LoggerFactory.getLogger(UserDaoInMemory.class.getName());
 
     @Autowired
     private Storage storage;
@@ -26,8 +26,9 @@ public class UserDaoInMemory implements UserDao {
     @Override
     public void updateUser(User user) {
         log.info("Searching user with id {}...", user.getId());
-        if (storage.findById(user.getId()) != null) {
-            log.info("com.company.domain.User {} {} {} was found, updating...", user.getId(), user.getLogin(), user.getName());
+        User dbUser = storage.findById(user.getId());
+        if (dbUser != null) {
+            log.info("com.company.domain.User {} {} {} was found, updating...", dbUser.getId(), dbUser.getLogin(), dbUser.getName());
             createUser(user);
             log.info("com.company.domain.User {} {} {} updated!", user.getId(), user.getLogin(), user.getName());
         } else {

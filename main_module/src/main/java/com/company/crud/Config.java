@@ -9,13 +9,6 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class Config {
 
-//    private ConfigurableApplicationContext context;
-//    @Autowired
-//    public void context(ConfigurableApplicationContext context) { this.context = context; }
-//
-//    private UserDaoInMemory ud = (UserDaoInMemory) context.getBean("udim");
-
-
     @Bean("udim")
     public UserDaoInMemory userDaoInMemory() {
         return new UserDaoInMemory();
@@ -32,15 +25,7 @@ public class Config {
     }
 
     @Bean
-    //@Scope("prototype")
     public SpringbootCrudApplication sbca() {
         return new SpringbootCrudApplication();
     }
-
-
-
-
-
-
-
 }

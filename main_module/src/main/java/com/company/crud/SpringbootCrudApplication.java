@@ -23,31 +23,8 @@ public class SpringbootCrudApplication {
 	public void cp(ConsolePrompt cp) {	SpringbootCrudApplication.cp = cp;	}
 
 
-//	static private ConsolePrompt cp;
-//	@Autowired
-//	public static void consolePrompt(ConsolePrompt consolePrompt) {
-//		cp = consolePrompt;
-//	}
-
 	public static void main(String[] args) throws IOException {
 		ConfigurableApplicationContext ctx = SpringApplication.run(SpringbootCrudApplication.class, args);
-		//UserDao ud = (UserDaoInMemory) ctx.getBean("udim");
-
-//		ud.createUser(new User("fgd", "gfdg", "gfdg"));
-//		System.out.println(ud);
-
-
-		//ConsolePrompt cp = (ConsolePrompt) ctx.getBean("consolePrompt");
 		cp.startPrompt();
-
-
-
 	}
-
-
-
-
-
-
-
 }
